@@ -33,7 +33,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: read node version from .nvmrc
-      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
       shell: bash
       id: nvm
 
