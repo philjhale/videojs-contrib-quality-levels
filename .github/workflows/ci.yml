@@ -43,7 +43,7 @@ jobs:
 
     - name: output step
       id: output-step
-      run: echo "Version is ${{steps.test-step.outputs.VERSION}}""
+      run: echo "Version is ${{steps.test-step.outputs.VERSION}}"
 
     - name: update apt cache on linux w/o browserstack
       run: sudo apt-get update
