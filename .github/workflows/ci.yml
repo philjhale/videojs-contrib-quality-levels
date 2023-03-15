@@ -41,6 +41,10 @@ jobs:
       id: test-step
       run: echo "VERSION=$(node -e "process.stdout.write(require('./package.json').version.split('.').join('-'))")" >> $GITHUB_OUTPUT
 
+    - name: output step
+      id: output-step
+      run: echo "Version is ${{steps.test-step.outputs.VERSION}}""
+
     - name: update apt cache on linux w/o browserstack
       run: sudo apt-get update
 
